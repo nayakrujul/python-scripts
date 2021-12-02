@@ -61,8 +61,13 @@ def two_vars(eq1, eq2, var1, var2):
     ce1_2, right1 = ce1_2 * ce2_1, right1 * ce2_1
     ce2_2, right2 = ce2_2 * ce1_1, right2 * ce1_1
 
+    eq1 = f'{ce1_2}{var2}={right1}'
+    eq2 = f'{ce2_2}{var2}={right2}'
+
     diff_var = ce1_2 - ce2_2
     diff_num = right1 - right2
+
+    eq3 = f'{diff_var}{var2}={diff_num}'
 
     var2_value = diff_num / diff_var
 
@@ -72,7 +77,9 @@ def two_vars(eq1, eq2, var1, var2):
 
     var1_value = one_var(f'{ce1_1*ce2_1}{var1}{v2}={right1}', var1)
 
-    return {var1: var1_value, var2: var2_value, 'eq3': f'{ce1_1*ce2_1}{var1}{v2}={right1}'}
+    eq4 = f'{ce1_1*ce2_1}{var1}{v2}={right1}'
+
+    return {var1: var1_value, var2: var2_value, 'steps': (eq1,  eq2,  eq3,  eq4)}
   
   except:
 
