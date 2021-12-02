@@ -61,8 +61,8 @@ def two_vars(eq1, eq2, var1, var2):
     ce1_2, right1 = ce1_2 * ce2_1, right1 * ce2_1
     ce2_2, right2 = ce2_2 * ce1_1, right2 * ce1_1
 
-    eq1 = f'{ce1_2}{var2}={right1}'
-    eq2 = f'{ce2_2}{var2}={right2}'
+    eq1 = f'{ce1_1*ce2_1}{var1}+{ce1_2}{var2}={right1}'
+    eq2 = f'{ce1_1*ce2_1}{var1}+{ce2_2}{var2}={right2}'
 
     diff_var = ce1_2 - ce2_2
     diff_num = right1 - right2
