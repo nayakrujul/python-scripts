@@ -41,12 +41,18 @@ def two_vars(eq1, eq2, var1, var2):
     left2 = eq2.split("=")[0]
     right2 = int(eq2.split("=")[1])
 
-    ce1_1 = int(left1.split(var1)[0])
+    try:
+      ce1_1 = int(left1.split(var1)[0])
+    except:
+      ce1_1 = int(left1.split(var1)[0] + "1")
     try:
       ce1_2 = int(left1.split(var1)[1].split(var2)[0])
     except:
       ce1_2 = int(left1.split(var1)[1].split(var2)[0] + "1")
-    ce2_1 = int(left2.split(var1)[0])
+    try:
+      ce2_1 = int(left2.split(var1)[0])
+    except:
+      ce2_1 = int(left2.split(var1)[0] + "1")
     try:
       ce2_2 = int(left2.split(var1)[1].split(var2)[0])
     except:
@@ -70,8 +76,8 @@ def two_vars(eq1, eq2, var1, var2):
   
   except:
 
-    raise ValueError(f"Wrong format")
+    raise ValueError("Wrong format")
 
 print(two_vars("3x+2y=29", "2x+3y=31", "x", "y"))
 print(two_vars("2a+4b=14", "4a-4b=4", "a", "b"))
-print(two_vars("6m+n=18", "4m+n=14", "m", "n"))
+print(two_vars("6m+2n=18", "4m+n=14", "m", "n"))
