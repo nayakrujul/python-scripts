@@ -78,8 +78,9 @@ def two_vars(eq1, eq2, var1, var2):
     var1_value = one_var(f'{ce1_1*ce2_1}{var1}{v2}={right1}', var1)
 
     eq4 = f'{ce1_1*ce2_1}{var1}{v2}={right1}'
+    eq5 = f'{ce1_1*ce2_1}{var1}={right1-int(v2)}'
 
-    return {var1: var1_value, var2: var2_value, 'steps': (eq1,  eq2,  eq3,  eq4)}
+    return {var1: var1_value, var2: var2_value, 'steps': (eq1,  eq2,  eq3,  eq4, eq5)}
   
   except:
 
