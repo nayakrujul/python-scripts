@@ -1,6 +1,6 @@
 from curses import wrapper
 from time import sleep
-from random import randint
+from random import randint, random
 
 
 running = True
@@ -9,6 +9,7 @@ bird_y = 4
 gap = randint(0, 9)
 score = 0
 speed = 5
+hacker = False
 
 
 def display(stdscr):
@@ -30,22 +31,29 @@ def display(stdscr):
 
 def move(direction):
 
-    global bird_y
+    global bird_y, hacker
+
     if direction == 258 and bird_y < 9:
         bird_y += 1
         return True
+
     if direction == 259 and bird_y > 0:
         bird_y -= 1
         return True
+
     if 48 <= direction <= 57:
         bird_y = direction - 48
         return True
+
+    if direction == ord('H'):
+        hacker = not hacker
+
     return False
 
 
 def main(stdscr):
 
-    global poles_x, running, gap, score, speed
+    global poles_x, running, gap, score, speed, bird_y
 
     stdscr.nodelay(1)
 
@@ -67,6 +75,9 @@ def main(stdscr):
             else:
                 score += 1
                 speed += 0.5
+
+        if hacker and int(round(random()) + 0.25):
+            bird_y = gap
 
         sleep(1 / speed)
 
