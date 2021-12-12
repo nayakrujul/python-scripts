@@ -12,45 +12,65 @@ def get_data(country_name):
 
     lst = []
 
+    best_match = "", 0
     for item in location['data']:
+        if country_name.lower() == item['name'].lower():
+            best_match = item, 2
         if (country_name.lower() in item['name'].lower()
                 or item['name'].lower() in country_name.lower()):
-            lst.append(item)
-            break
-    else:
+            if best_match[1] < 1:
+                best_match = item, 1
+    if best_match[0] == "":
         return False
+    lst.append(best_match[0])
 
+    best_match = "", 0
     for item in population['data']:
+        if country_name.lower() == item['country'].lower():
+            best_match = item, 2
         if (country_name.lower() in item['country'].lower()
                 or item['country'].lower() in country_name.lower()):
-            lst.append(item)
-            break
-    else:
+            if best_match[1] < 1:
+                best_match = item, 1
+    if best_match[0] == "":
         return False
+    lst.append(best_match[0])
 
+    best_match = "", 0
     for item in currency['data']:
+        if country_name.lower() == item['name'].lower():
+            best_match = item, 2
         if (country_name.lower() in item['name'].lower()
                 or item['name'].lower() in country_name.lower()):
-            lst.append(item)
-            break
-    else:
+            if best_match[1] < 1:
+                best_match = item, 1
+    if best_match[0] == "":
         return False
+    lst.append(best_match[0])
 
+    best_match = "", 0
     for item in codes['data']:
+        if country_name.lower() == item['name'].lower():
+            best_match = item, 2
         if (country_name.lower() in item['name'].lower()
                 or item['name'].lower() in country_name.lower()):
-            lst.append(item)
-            break
-    else:
+            if best_match[1] < 1:
+                best_match = item, 1
+    if best_match[0] == "":
         return False
+    lst.append(best_match[0])
 
+    best_match = "", 0
     for item in cities['data']:
+        if country_name.lower() == item['country'].lower():
+            best_match = item, 2
         if (country_name.lower() in item['country'].lower()
                 or item['country'].lower() in country_name.lower()):
-            lst.append(item)
-            break
-    else:
+            if best_match[1] < 1:
+                best_match = item, 1
+    if best_match[0] == "":
         return False
+    lst.append(best_match[0])
 
     lst.append(lst[0]['name'])
     return lst
@@ -65,35 +85,30 @@ if not (location['error'] and population['error'] and currency['error'] and citi
 
     if data is not False:
 
-        if len(data) == 6:
+        print(f"Country {data[5]}:\n")
 
-            print(f"Country {data[5]}:\n")
+        print(
+            f"Location: {data[0]['lat']} N/S, {data[0]['long']} E/W"
+        )
 
-            print(
-                f"Location: {data[0]['lat']} N/S, {data[0]['long']} E/W"
-            )
+        print(
+            f"Population as of {data[1]['populationCounts'][-1]['year']}: {data[1]['populationCounts'][-1]['value']}"
+        )
 
-            print(
-                f"Population as of {data[1]['populationCounts'][-1]['year']}: {data[1]['populationCounts'][-1]['value']}"
-            )
+        print(
+            f"Currency: {data[2]['currency']}"
+        )
 
-            print(
-                f"Currency: {data[2]['currency']}"
-            )
+        print(
+            f"ISO codes: {data[3]['Iso2']} / {data[3]['Iso3']}"
+        )
 
-            print(
-                f"ISO codes: {data[3]['Iso2']} / {data[3]['Iso3']}"
-            )
+        city = input(f"\nIs this city in {data[5]}: ")
 
-            city = input(f"\nIs this city in {data[5]}: ")
-
-            if city.lower() in [x.lower() for x in data[4]['cities']]:
-                print("Yes.")
-            else:
-                print("No.")
-
+        if city.lower() in [x.lower() for x in data[4]['cities']]:
+            print("Yes.")
         else:
-            print("Country not found.")
+            print("No.")
 
     else:
         print("Country not found.")
