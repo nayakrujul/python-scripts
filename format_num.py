@@ -1,88 +1,82 @@
-def format_num(num, sepChar=",", chars=3):
+def format_num(num, sep_char=",", chars=3):
 
-  # Raise error if the argument is not in the desired format
-  if not str(num).isdigit():
-    raise ValueError
-
-  try:
+    # Raise error if the argument is not in the desired format
+    if not str(num).isdigit():
+        return num
 
     if chars == 0:
+        return num
 
-      raise ValueError
-  
-  except Exception:
+    s = str(num)
 
-    raise ValueError
+    new = ""
 
-  s = str(num)
+    # Reverse the string
 
-  new = ""
+    for c in range(1, len(s)+1):
 
-  # Reverse the string
+        new += s[-c]
 
-  for c in range(1, len(s)+1):
+    sep = ""
 
-    new += s[-c]
+    # Reverse the separator
 
-  sep = ""
+    for m in range(1, len(sep_char) + 1):
 
-  # Reverse the separator
+            sep += sep_char[-m]
 
-  for m in range(1, len(sepChar)+1):
+    final = ""
 
-      sep += sepChar[-m]
+    # Loop through the reversed string and add separators to every third character
 
-  final = ""
+    for i in range(len(new)):
 
-  # Loop through the reversed string and add separators to every third character
+        if i % chars == 0 and i != 0:
 
-  for i in range(len(new)):
+            final += sep + new[i]
 
-    if i % chars == 0 and i != 0:
+        else:
 
-      final += sep + new[i]
+            final += new[i]
 
-    else:
+    return_str = ""
 
-      final += new[i]
+    # Reverse the full string and return
 
-  returnstr = ""
+    for x in range(1, len(final) + 1):
 
-  # Reverse the full string and return
+        return_str += final[-x]
 
-  for x in range(1, len(final) + 1):
+    return return_str
 
-    returnstr += final[-x]
-
-  return returnstr
 
 def estimate(num):
 
-  # Raise error if the argument is not in the desired format
-  if not str(num).isdigit():
-    raise ValueError
+    # Raise error if the argument is not in the desired format
+    if not str(num).isdigit():
+        return num
 
-  s = str(num)
-  num = int(num)
+    s = str(num)
+    num = int(num)
 
-  digits = {
-    13: [1, " trillion"],
-    12: [100, " billion"],
-    11: [10, " billion"],
-    10: [1, " billion"],
-    9: [100, " million"],
-    8: [10, " million"],
-    7: [1, " million"],
-    6: [100, " thousand"],
-    5: [10, " thousand"],
-    4: [1, " thousand"],
-  }
+    digits = {
+        13: [1, " trillion"],
+        12: [100, " billion"],
+        11: [10, " billion"],
+        10: [1, " billion"],
+        9: [100, " million"],
+        8: [10, " million"],
+        7: [1, " million"],
+        6: [100, " thousand"],
+        5: [10, " thousand"],
+        4: [1, " thousand"],
+    }
 
-  for i in digits.keys():
-    if len(s) >= i:
-      ext = digits[i]
-      break
-  else:
-    return ""
-  
-  return "(~" + str(round(((num/(10**(len(s)-1))) * ext[0]), 1)) + ext[1] + ")"
+    for i in digits.keys():
+        if len(s) >= i:
+            ext = digits[i]
+            break
+    else:
+        return ""
+    
+    return "(~" + str(round(((num/(10**(len(s)-1))) * ext[0]), 1)) + ext[1] + ")"
