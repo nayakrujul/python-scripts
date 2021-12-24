@@ -1,6 +1,5 @@
 def format_num(num, sep_char=",", chars=3):
 
-    # Raise error if the argument is not in the desired format
     if not str(num).isdigit():
         return num
 
@@ -23,7 +22,7 @@ def format_num(num, sep_char=",", chars=3):
 
     for m in range(1, len(sep_char) + 1):
 
-            sep += sep_char[-m]
+        sep += sep_char[-m]
 
     final = ""
 
@@ -48,6 +47,62 @@ def format_num(num, sep_char=",", chars=3):
         return_str += final[-x]
 
     return return_str
+
+
+def format_num_2(num, lst_chars=None, sep=","):
+
+    if lst_chars is None:
+        lst_chars = [3, 2, ...]
+
+    if not isinstance(sep, str):
+        sep = ","
+
+    if type(lst_chars) not in [type(list()), type(tuple())]:
+        return -1
+
+    for i in lst_chars:
+        if not isinstance(i, int) and i is not ...:
+            return -2
+        if i is not ...:
+            if i <= 0:
+                return -3
+
+    if not str(num).isdigit():
+        return -4
+
+    if not len(lst_chars):
+        return -5
+
+    s = ''.join(reversed(list(str(num))))
+
+    if lst_chars[-1] is not ...:
+        if sum(lst_chars) < len(s):
+            return -6
+
+    lst_index = 0
+    char_index = 0
+    new_num = ''
+
+    for index in range(len(s)):
+
+        while lst_chars[lst_index] is ...:
+            lst_index -= 1
+
+        new_num += s[index]
+
+        if char_index == lst_chars[lst_index] - 1:
+
+            new_num += sep
+            char_index = 0
+            lst_index += 1
+
+        else:
+            char_index += 1
+
+    if new_num[-len(sep):] == sep:
+        new_num = new_num[:-len(sep)]
+
+    return ''.join(reversed(list(new_num)))
 
 
 def estimate(num):
