@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>nayakrujul/tables</title>
+    </head>
+    <body>
+
+        <h1 id="title">my table</h1>
+
+        <input type="text" id="titleText" value="my table" style="display: none; font-size:35px;" />
+        <input type="button" value="change text" onclick="javascript:changeTitleText()" />
+
+        <br /> <br />
+
+        <input type="text" id="titleColour" value="title colour" />
+        <input type="button" value="change" onclick="javascript:titleText()" />
+
+        <br /> <br /> <br />
+
+        <table style="border: 1px solid black;" id="table">
+            <tr>
+                <th><input type="text" value="heading 1" /></th>
+                <th><input type="text" value="heading 2" /></th>
+                <th><input type="text" value="heading 3" /></th>
+            </tr>
+            <tr>
+                <td id="cell1"><input type="text" /></td>
+                <td id="cell2"><input type="text" /></td>
+                <td id="cell3"><input type="text" /></td>
+            </tr>
+        </table>
+
+        <input type="button" value="add row" onclick="javascript:newRow()" />
+        <input type="button" value="remove last row" onclick="javascript:remove_row()" />
+
+        <br /> <br />
+
+        <input type="text" id="tableBorder" value="table border" />
+        <input type="button" value="change" onclick="javascript:tableBorder()" />
+        <br />
+
+        <input type="text" id="pageBack" value="page background" />
+        <input type="button" value="change" onclick="javascript:pageBackground()" />
+        <br />
+
+        <script src="script.js"></script>
+    </body>
+</html>
