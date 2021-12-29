@@ -1,3 +1,5 @@
+# Read 'README.txt' for more info.
+
 import webbrowser
 import os
 

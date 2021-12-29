@@ -1,3 +1,5 @@
+// Read 'README.txt' for more info.
+
 function newRow() {
 
     var table = document.getElementById("table");
