@@ -3,4 +3,7 @@
 import webbrowser
 import os
 
-webbrowser.open('file://' + os.getcwd() + '/index.html')
+try:
+    webbrowser.open('file://' + os.getcwd() + '/index.html')
+except:
+    print("Unable to open file.")
