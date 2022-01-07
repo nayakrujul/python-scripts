@@ -10,9 +10,11 @@ per second but gets 0.5 blocks per second faster
 every 10 blocks. You get 1 point per block. The aim
 is to reach a score of 200 points.
 
+*** THIS ONLY WORKS ON MACOS / LINUX ***
+
 No PIP installations necessary.
 Written in Python 3.9.9
-Compatible with Python 3.0+
+Compatible with Python 3.5+
 
 Written in January 2022,
 nayakrujul

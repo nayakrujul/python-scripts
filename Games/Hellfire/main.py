@@ -4,7 +4,7 @@ from random import randint
 from os import system
 
 
-class Game:
+class Level1:
 
     def __init__(self):
         self.board = [[' ' for a in range(20)] for b in range(5)]
@@ -39,12 +39,32 @@ class Game:
         return True
 
 
+class Level2:
+
+    def __init__(self):
+        self.board = [[' ' for a in range(15)] for b in range(15)]
+        self.position = [7, 7]
+        self.missiles_dict = dict()
+        self.rnd_count = 3
+
+    def __str__(self):
+        ret = []
+        for c in self.board:
+            ret.append([])
+            for d in c:
+                if d != ' ':
+                    ret[-1].append('X')
+                else:
+                    ret[-1].append(' ')
+        return '\n'.join([' '.join(e) for e in ret])
+
+
 running = True
 win = False
-game = Game()
+game = Level1()
 
 
-def main(stdscr):
+def first_level(stdscr):
 
     global running, win, game
 
@@ -72,6 +92,13 @@ def main(stdscr):
         sleep(1 / game.speed)
 
 
+def second_level(stdscr):
+
+    global running, win, game
+
+    stdscr.nodelay(1)
+
+
 input("""HELLFIRE by nayakrujul
 Instructions:
 Avoid the oncoming missiles using the up and down arrow keys.
@@ -81,9 +108,19 @@ Press return to continue.
 
 system('clear')
 
-wrapper(main)
+wrapper(first_level)
 
 if win:
-    print("Well done, you beat the level.")
+
+    input("""You made it to the second level.
+This time you're going to have to move in all four directions.
+All arrow keys are now enabled. Avoid the oncoming missiles,
+which now come from all directions, and get to a score of 200
+to complete the level.
+""")
+
+    game = Level2()
+    wrapper(second_level)
+
 else:
     print("You got ", game.score, ". Try again to see if you can do better.", sep="")
