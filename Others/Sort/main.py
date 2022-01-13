@@ -1,5 +1,4 @@
 import string
-import arrow
 from typing import *
 
 
@@ -14,10 +13,10 @@ class Sort:
         self.last = last
 
     def __str__(self):
-        return 'Sort object: "' + str(self.sort()) + '" at ' + arrow.now().format('YYYYMMDDTHHmmss')
+        return str(self.sort())
 
-    def __repr__(self):
-        return self.sort()
+    def list(self):
+        return list(self.sort())
 
     def sort(self) -> list:
         sorted_lst = []
@@ -56,4 +55,4 @@ class Sort:
 
 
 sort = Sort("let's sort this sentence in alphabetical order.".split())
-print(' '.join(repr(sort)))
+print(sort.list())
