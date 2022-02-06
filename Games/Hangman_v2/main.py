@@ -13,7 +13,7 @@ def delay_print(text, delay=0.1, colour='\033[0m'):
     for char in text:
         print(char, end='', flush=True)
         sleep(delay)
-    print('\033[0m',end='')
+    print('\033[0m', end='')
 
 
 f = open('words.txt')
