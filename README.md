@@ -16,6 +16,7 @@ The GUIZero, Tkinter and Pygame files can be fully accessed through Replit (repl
 - Pygame\TypingTest.py
 - Cipher\Cipher_Main.py
 - Images\ASCII-Art\main.py
+- Games\Mega_NoughtsAndCrosses.py
 
 
 
