@@ -21,17 +21,6 @@ In main.py, it plots a graph of the data
 using matplotlib.
 You can see a graph of my data in Graph.png.
 
-The key to Graph.png is:
-Blue = Bubble sort
-Orange = Bucket sort
-Green = Insertion sort
-Red = Quick sort
-Purple = Radix sort
-Brown = Selection sort
-Pink = Comb sort
-X axis: Number of elements in the list
-Y axis: Average time to sort in milliseconds
-
 You will need to have matplotlib installed (use
 `pip install matplotlib` in the shell to install)
 
