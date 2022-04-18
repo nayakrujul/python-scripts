@@ -1,0 +1,217 @@
+Afghanistan: 652,860
+Albania: 27,400
+Algeria: 2,381,741
+American Samoa: 200
+Andorra: 470
+Angola: 1,246,700
+Antigua and Barbuda: 440
+Argentina: 2,736,690
+Armenia: 28,470
+Aruba: 180
+Australia: 7,692,020
+Austria: 82,520
+Azerbaijan: 82,654
+Bahamas, The: 10,010
+Bahrain: 780
+Bangladesh: 130,170
+Barbados: 430
+Belarus: 202,980
+Belgium: 30,280
+Belize: 22,810
+Benin: 112,760
+Bermuda: 54
+Bhutan: 38,140
+Bolivia: 1,083,300
+Bosnia and Herzegovina: 51,200
+Botswana: 566,730
+Brazil: 8,358,140
+British Virgin Islands: 150
+Brunei Darussalam: 5,270
+Bulgaria: 108,560
+Burkina Faso: 273,600
+Burundi: 25,680
+Cabo Verde: 4,030
+Cambodia: 176,520
+Cameroon: 472,710
+Canada: 8,965,590
+Cayman Islands: 240
+Central African Republic: 622,980
+Chad: 1,259,200
+Channel Islands: 198
+Chile: 743,532
+China: 9,424,703
+Colombia: 1,109,500
+Comoros: 1,861
+Congo, Dem. Rep.: 2,267,050
+Congo, Rep.: 341,500
+Costa Rica: 51,060
+Cote d'Ivoire: 318,000
+Croatia: 56,590
+Cuba: 103,800
+Curacao: 444
+Cyprus: 9,240
+Czech Republic: 77,200
+Denmark: 40,000
+Djibouti: 23,180
+Dominica: 750
+Dominican Republic: 48,310
+Ecuador: 248,360
+Egypt, Arab Rep.: 995,450
+El Salvador: 20,720
+Equatorial Guinea: 28,050
+Eritrea: 101,000
+Estonia: 43,470
+Eswatini: 17,200
+Ethiopia: 1,129,300
+Faroe Islands: 1,396
+Fiji: 18,270
+Finland: 303,920
+France: 547,557
+French Polynesia: 3,520
+Gabon: 257,670
+Gambia, The: 10,120
+Georgia: 69,490
+Germany: 349,380
+Ghana: 227,540
+Gibraltar: 10
+Greece: 128,900
+Greenland: 410,450
+Grenada: 340
+Guam: 540
+Guatemala: 107,160
+Guinea: 245,720
+Guinea-Bissau: 28,120
+Guyana: 196,850
+Haiti: 27,560
+Honduras: 111,890
+Hong Kong SAR, China: 1,050
+Hungary: 91,260
+Iceland: 100,830
+India: 2,973,190
+Indonesia: 1,877,519
+Iran, Islamic Rep.: 1,628,760
+Iraq: 434,128
+Ireland: 68,890
+Isle of Man: 570
+Israel: 21,640
+Italy: 297,730
+Jamaica: 10,830
+Japan: 364,500
+Jordan: 88,780
+Kazakhstan: 2,699,700
+Kenya: 569,140
+Kiribati: 810
+Korea, Dem. People's Rep.: 120,410
+Korea, Rep.: 97,520
+Kosovo: 2017: 10,887
+Kuwait: 17,820
+Kyrgyz Republic: 191,800
+Lao PDR: 230,800
+Latvia: 62,090
+Lebanon: 10,230
+Lesotho: 30,360
+Liberia: 96,320
+Libya: 1,759,540
+Liechtenstein: 160
+Lithuania: 62,630
+Luxembourg: 2,430
+Macao SAR, China: 33
+Madagascar: 581,800
+Malawi: 94,280
+Malaysia: 328,550
+Maldives: 300
+Mali: 1,220,190
+Malta: 320
+Marshall Islands: 180
+Mauritania: 1,030,700
+Mauritius: 2,030
+Mexico: 1,943,950
+Micronesia, Fed. Sts.: 700
+Moldova: 32,885
+Monaco: 2
+Mongolia: 1,557,255
+Montenegro: 13,450
+Morocco: 446,300
+Mozambique: 786,380
+Myanmar: 652,790
+Namibia: 823,290
+Nauru: 20
+Nepal: 143,350
+Netherlands: 33,670
+New Caledonia: 18,280
+New Zealand: 263,310
+Nicaragua: 120,340
+Niger: 1,266,700
+Nigeria: 910,770
+North Macedonia: 25,220
+Northern Mariana Islands: 460
+Norway: 365,108
+Oman: 309,500
+Pakistan: 770,880
+Palau: 460
+Panama: 74,177
+Papua New Guinea: 452,860
+Paraguay: 397,300
+Peru: 1,280,000
+Philippines: 298,170
+Poland: 306,170
+Portugal: 91,606
+Puerto Rico: 8,870
+Qatar: 11,490
+Romania: 230,080
+Russian Federation: 16,376,870
+Rwanda: 24,670
+Samoa: 2,830
+San Marino: 60
+Sao Tome and Principe: 960
+Saudi Arabia: 2,149,690
+Senegal: 192,530
+Serbia: 87,460
+Seychelles: 460
+Sierra Leone: 72,180
+Singapore: 709
+Sint Maarten (Dutch part): 34
+Slovak Republic: 48,080
+Slovenia: 20,136
+Solomon Islands: 27,990
+Somalia: 627,340
+South Africa: 1,213,090
+South Sudan: 631,928
+Spain: 499,603
+Sri Lanka: 61,864
+St. Kitts and Nevis: 260
+St. Lucia: 610
+St. Martin (French part): 50
+St. Vincent and the Grenadines: 390
+Sudan: 1,849,234
+Suriname: 156,000
+Sweden: 407,310
+Switzerland: 39,516
+Syrian Arab Republic: 183,630
+Tajikistan: 138,790
+Tanzania: 885,800
+Thailand: 510,890
+Timor-Leste: 14,870
+Togo: 54,390
+Tonga: 720
+Trinidad and Tobago: 5,130
+Tunisia: 155,360
+Turkey: 769,630
+Turkmenistan: 469,930
+Turks and Caicos Islands: 950
+Tuvalu: 30
+Uganda: 200,520
+Ukraine: 579,400
+United Arab Emirates: 71,020
+United Kingdom: 241,930
+United States: 9,147,420
+Uruguay: 175,020
+Uzbekistan: 440,555
+Vanuatu: 12,190
+Venezuela, RB: 882,050
+Vietnam: 310,070
+Virgin Islands (U.S.): 350
+West Bank and Gaza: 6,020
+Yemen, Rep.: 527,970
+Zambia: 743,390
+Zimbabwe: 386,850
