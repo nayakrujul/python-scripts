@@ -48,11 +48,11 @@ def check(arg):
                 score += 1
                 score_text.value = 'Score: ' + str(score)
                 c1flag.delete(imgid)
-                try: imgid = c1flag.image(0, 0, 'flags4/' + country1.value + '.png')
-                except: imgid = c1flag.image(0, 0, 'flags4/NotFound.png')
+                try: imgid = c1flag.image(0, 0, 'flags2/' + country1.value + '.png')
+                except: imgid = c1flag.image(0, 0, 'flags2/NotFound.png')
                 c2flag.delete(imgid2)
-                try: imgid2 = c2flag.image(0, 0, 'flags4/' + country2.value + '.png')
-                except: imgid2 = c2flag.image(0, 0, 'flags4/NotFound.png')
+                try: imgid2 = c2flag.image(0, 0, 'flags2/' + country2.value + '.png')
+                except: imgid2 = c2flag.image(0, 0, 'flags2/NotFound.png')
             else:
                 app.repeat(500, change_colour, ['red'])
                 game = False
@@ -69,11 +69,11 @@ def check(arg):
                 score += 1
                 score_text.value = 'Score: ' + str(score)
                 c1flag.delete(imgid)
-                try: imgid = c1flag.image(0, 0, 'flags4/' + country1.value + '.png')
-                except: imgid = c1flag.image(0, 0, 'flags4/NotFound.png')
+                try: imgid = c1flag.image(0, 0, 'flags2/' + country1.value + '.png')
+                except: imgid = c1flag.image(0, 0, 'flags2/NotFound.png')
                 c2flag.delete(imgid2)
-                try: imgid2 = c2flag.image(0, 0, 'flags4/' + country2.value + '.png')
-                except: imgid2 = c2flag.image(0, 0, 'flags4/NotFound.png')
+                try: imgid2 = c2flag.image(0, 0, 'flags2/' + country2.value + '.png')
+                except: imgid2 = c2flag.image(0, 0, 'flags2/NotFound.png')
             else:
                 app.repeat(500, change_colour, ['red'])
                 game = False
@@ -90,10 +90,10 @@ def new_game():
     c2size.value = ""
     c1flag.delete(imgid)
     c2flag.delete(imgid2)
-    try: imgid = c1flag.image(0, 0, 'flags4/' + country1.value + '.png')
-    except: imgid = c1flag.image(0, 0, 'flags4/NotFound.png')
-    try: imgid2 = c2flag.image(0, 0, 'flags4/' + country2.value + '.png')
-    except: imgid2 = c2flag.image(0, 0, 'flags4/NotFound.png')
+    try: imgid = c1flag.image(0, 0, 'flags2/' + country1.value + '.png')
+    except: imgid = c1flag.image(0, 0, 'flags2/NotFound.png')
+    try: imgid2 = c2flag.image(0, 0, 'flags2/' + country2.value + '.png')
+    except: imgid2 = c2flag.image(0, 0, 'flags2/NotFound.png')
     bigger.show()
     smaller.show()
     play_again.hide()
@@ -107,8 +107,8 @@ app = App("Bigger or smaller?")
 country1 = Text(app, choice(list(areas.keys())), size=20)
 c1size = Text(app, format_num(areas[country1.value]) + ' sq km')
 c1flag = Drawing(app, width=100, height=120)
-try: imgid = c1flag.image(0, 0, 'flags4/' + country1.value + '.png')
-except: imgid = c1flag.image(0, 0, 'flags4/NotFound.png')
+try: imgid = c1flag.image(0, 0, 'flags2/' + country1.value + '.png')
+except: imgid = c1flag.image(0, 0, 'flags2/NotFound.png')
 
 Text(app, "vs\n\n")
 
@@ -117,8 +117,8 @@ while country2.value == country1.value:
     country2.value = choice(list(areas.keys()))
 c2size = Text(app, "")
 c2flag = Drawing(app, width=100, height=120)
-try: imgid2 = c2flag.image(0, 0, 'flags4/' + country2.value + '.png')
-except: imgid2 = c2flag.image(0, 0, 'flags4/NotFound.png')
+try: imgid2 = c2flag.image(0, 0, 'flags2/' + country2.value + '.png')
+except: imgid2 = c2flag.image(0, 0, 'flags2/NotFound.png')
 
 bigger = PushButton(app, text="Bigger", command=button_pressed, args=['B'])
 smaller = PushButton(app, text="Smaller", command=button_pressed, args=['S'])
