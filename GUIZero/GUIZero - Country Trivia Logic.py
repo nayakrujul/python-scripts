@@ -52,9 +52,10 @@ def get_coordinates(x, y):
 
 def check():
     answer.value = answer.value.replace(' ', '')
-    if answer.value.lower() in countries and squares[activated[0]][activated[1]].bg == 'blue':
+    if answer.value.lower() in countries and squares[activated[0]][activated[1]].bg == 'lightblue':
         if answer.value.lower() == answers[activated[0]][activated[1]].lower().replace(' ', ''):
             squares[activated[0]][activated[1]].bg = None
+            squares[activated[0]][activated[1]].text_color = 'blue'
             answer.value = ''
         else:
             answer.value = ''
@@ -65,6 +66,13 @@ def activate(x, y):
     global activated
     if answer.enabled:
         activated = [x, y]
+        for a in range(5):
+            for b in range(6):
+                if squares[a][b].bg == 'lightblue':
+                    squares[a][b].bg = 'blue'
+                    squares[a][b].text_color = 'blue'
+        squares[x][y].text_color = 'lightblue'
+        squares[x][y].bg = 'lightblue'
         square_text.value = get_coordinates(x, y)
 
 def clear_board():
@@ -87,7 +95,9 @@ def clear_board():
                 text=answers[x][y] + '\n' + '\n'.join(wrap(hints[get_coordinates(x, y)], 20)),
                 command=activate,
                 args=[x, y],
-                grid=[y + 1, x + 1]
+                grid=[y + 1, x + 1],
+                width=15,
+                height=5
             )
             button.text_color = 'blue'
             button.bg = 'blue'
@@ -99,6 +109,8 @@ app = App('Country Trivia Logic')
 board = Box(app, layout='grid')
 squares = clear_board()
 squares[0][0].bg = None
+squares[1][0].text_color = 'lightblue'
+squares[1][0].bg = 'lightblue'
 
 Text(app, '\n\n')
 
