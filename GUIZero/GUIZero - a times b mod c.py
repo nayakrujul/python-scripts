@@ -4,6 +4,12 @@ from guizero import App, Drawing, Slider, Text
 def line_length(x1, y1, x2, y2):
     return math.sqrt(((x2 - x1) ** 2) + ((y2 - y1) ** 2))
 
+def text(n, r, x, y):
+    ids = []
+    for i in range(n):
+        ids.append(shape.text((r * math.cos(2 * math.pi * i / n)) * (1 + (n / 200)) + x, (r * math.sin(2 * math.pi * i / n)) * (1 + (n / 200)) + y, str(i)))
+    return ids
+
 def polygon_coords(n, r, x, y):
     new_coords = []
     for i in range(n):
@@ -27,37 +33,35 @@ def decide_colour(x1, y1, x2, y2):
 
 def lines():
     ids = []
-    a = sides.value
+    c = sides.value
     b = mult.value
-    for c in range(sides.value):
-        x1, y1 = coords[(b * c) % a]
-        x2, y2 = coords[c]
+    for a in range(sides.value):
+        x1, y1 = coords[(a * b) % c]
+        x2, y2 = coords[a]
         colour = decide_colour(x1, y1, x2, y2)
         ids.append(shape.line(x1, y1, x2, y2, colour))
     return ids
 
 def change_sides():
-    global shape_id, coords, line_ids
+    global shape_id, coords, line_ids, text_ids
     shape.delete(shape_id)
-    coords = polygon_coords(sides.value, 200, 250, 200)
+    coords = polygon_coords(sides.value, 200, 325, 325)
     shape_id = shape.polygon(coords, color='white')
-    [shape.delete(id) for id in line_ids]
+    [shape.delete(id) for id in line_ids + text_ids]
     line_ids = lines()
+    text_ids = text(sides.value, 200, 325, 325)
 
-app = App('Mandelbrot Set - (a * b) MOD c')
+app = App('a * b MOD c')
 
-Text(app, 'The Mandelbrot Set\n', size=20)
+shape = Drawing(app, width=650, height=650)
 
-shape = Drawing(app, width=500, height=500)
-
-coords = polygon_coords(10, 200, 250, 200)
+coords = polygon_coords(10, 200, 325, 325)
 shape_id = shape.polygon(coords, color='white')
+text_ids = text(10, 200, 325, 325)
 
 Text(app, 'Number of sides:')
 sides = Slider(app, 4, 100, width=200, command=change_sides)
 sides.value = 10
-
-Text(app, '\n')
 
 Text(app, 'Multiple:')
 mult = Slider(app, 2, 10, command=change_sides)
