@@ -6,7 +6,7 @@ def display(lst, won_lst):
     colour = ['\033[0m', '\033[1;34m', '\033[1;31m']
 
     for a in range(0, 9, 3):
-        
+
         print(colour[won_lst[a]], end='')
         print(' | '.join(lst[a][0]), end='\t')
         print(colour[won_lst[a + 1]], end='')
@@ -142,4 +142,4 @@ while game:
 
 os.system('clear')
 display(boards, won)
-print(win)
+print('\033[0m' + win)
