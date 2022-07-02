@@ -90,13 +90,14 @@ def get_pos(xval, xscale, minx, yval, yscale, miny):
 
 
 showMessage('Enter the equation below', size=30)
+pygame.display.update()
 
 
 print('Enter an equation, e.g. y = 2*x^2 + 5*x + 1')
 print('                                           ')
 print('You can use any of the following functions:')
-print('sin, cos, tan, arcsin, arccos, arctan, sqrt')
-print('round, ceil, floor, abs                    ')
+print('sin, cos, tan, arcsin, arccos, arctan, abs,')
+print('round, ceil, floor, sqrt                   ')
 print('                                           ')
 
 equation = input('y = ')
