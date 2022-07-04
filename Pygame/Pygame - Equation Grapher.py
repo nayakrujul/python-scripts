@@ -40,17 +40,17 @@ def arctan(x):
   return math.degrees(cmath.atan(x).real)
 
 
-def showMessage(message, colour=BLACK, size=15, x=250, y=250, fill=True):
+def showMessage(message, text_colour=BLACK, size=15, x=250, y=250, fill=True):
 
     if fill:
         gameWindow.fill(WHITE)
     
     font = pygame.font.SysFont("dejavusansmono", size)
-    rendecolourText = font.render(message, True, colour)
+    renderedText = font.render(message, True, text_colour)
     
-    textArea = rendecolourText.get_rect()
+    textArea = renderedText.get_rect()
     textArea.center = x, y
-    gameWindow.blit(rendecolourText, textArea)
+    gameWindow.blit(renderedText, textArea)
 
 
 def get_coords(eq, lst):
@@ -66,7 +66,8 @@ def get_coords(eq, lst):
                     'x': xval,
                     'sin': sin, 'cos': cos, 'tan': tan,
                     'arcsin': arcsin, 'arccos': arccos, 'arctan': arctan,
-                    'sqrt': math.sqrt, 'ceil': math.ceil, 'floor': math.floor
+                    'sqrt': math.sqrt, 'ceil': math.ceil, 'floor': math.floor,
+                    'log': math.log
                 }
             ), 2))
         except Exception as e:
@@ -96,8 +97,8 @@ pygame.display.update()
 print('Enter an equation, e.g. y = 2*x^2 + 5*x + 1')
 print('                                           ')
 print('You can use any of the following functions:')
-print('sin, cos, tan, arcsin, arccos, arctan, abs,')
-print('round, ceil, floor, sqrt                   ')
+print('sin, cos, tan, arcsin, arccos, arctan, log,')
+print('round, ceil, floor, sqrt, abs              ')
 print('                                           ')
 
 equation = input('y = ')
@@ -189,7 +190,22 @@ while loop:
                         y=get_pos(0, sx, mx, yline, sy, my)[1],
                         fill=False
                     )
-        except: pass
+        except:
+            for yline in range(my, _my + 1):
+                if lines:
+                    pygame.draw.line(
+                        gameWindow, BLACK,
+                        (0, get_pos(0, sx, mx, yline, sy, my)[1]),
+                        (500, get_pos(0, sx, mx, yline, sy, my)[1]),
+                        2
+                    )
+                if labels:
+                    showMessage(
+                        str(yline),
+                        x=270,
+                        y=get_pos(0, sx, mx, yline, sy, my)[1],
+                        fill=False
+                    )
         for X, Y in zip(x, y):
             pygame.draw.circle(gameWindow, colour, get_pos(X, sx, mx, Y, sy, my), 5)
         pygame.display.update()
