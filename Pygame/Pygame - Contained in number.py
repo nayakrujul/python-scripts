@@ -17,8 +17,8 @@ pygame.display.set_caption("RN09")
 WHITE = (255, 255, 255)
 GREY = (200, 200, 200)
 
-num = input('Enter a digit (0-9): ')
-if num not in list('0123456789'):
+num = input('Enter any number: ')
+if not num.isdigit():
     num = '7'
 
 gameWindow.fill(WHITE)
@@ -30,7 +30,7 @@ def secs_to_min_secs(s):
     min, sec = divmod(s, 60)
     return f'{int(min)}:{str(int(sec)).zfill(2)}'
 
-for i in range(1, width*height + 1):
+for i in range(int(num), width*height + 1):
     y, x = divmod(i, width)
     if x == 0:
         os.system('clear')
